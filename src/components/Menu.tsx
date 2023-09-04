@@ -50,57 +50,51 @@ const Menu = () => {
         }
         id="primary-navigation"
       >
-        <ul aria-label="Primary" role="list">
+        <ul className="main-ul" aria-label="Primary" role="list">
           <Dropdown title={"Product"}>
-            <ul>
-              <li>
-                <a href="">Overview</a>
-              </li>
-              <li>
-                <a href="">Pricing</a>
-              </li>
-              <li>
-                <a href="">Marketplace</a>
-              </li>
-              <li>
-                <a href="">Features</a>
-              </li>
-              <li>
-                <a href="">Integrations</a>
-              </li>
-            </ul>
+            <li>
+              <a href="">Overview</a>
+            </li>
+            <li>
+              <a href="">Pricing</a>
+            </li>
+            <li>
+              <a href="">Marketplace</a>
+            </li>
+            <li>
+              <a href="">Features</a>
+            </li>
+            <li>
+              <a href="">Integrations</a>
+            </li>
           </Dropdown>
           <Dropdown title={"Company"}>
-            <ul>
-              <li>
-                <a href="">About</a>
-              </li>
-              <li>
-                <a href="">Team</a>
-              </li>
-              <li>
-                <a href="">Blog</a>
-              </li>
-              <li>
-                <a href="">Careers</a>
-              </li>
-            </ul>
+            <li>
+              <a href="">About</a>
+            </li>
+            <li>
+              <a href="">Team</a>
+            </li>
+            <li>
+              <a href="">Blog</a>
+            </li>
+            <li>
+              <a href="">Careers</a>
+            </li>
           </Dropdown>
           <Dropdown title={"Connect"}>
-            <ul>
-              <li>
-                <a href="">Contact</a>
-              </li>
-              <li>
-                <a href="">Newsletter</a>
-              </li>
-              <li>
-                <a href="">LinkedIn</a>
-              </li>
-            </ul>
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <li>
+              <a href="">Newsletter</a>
+            </li>
+            <li>
+              <a href="">LinkedIn</a>
+            </li>
           </Dropdown>
         </ul>
-        <ul className="buttons-section" role="list">
+        <ul className="btn-section" role="list">
           <li>
             <button className="btn-login">Login</button>
           </li>

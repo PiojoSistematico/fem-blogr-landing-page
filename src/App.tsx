@@ -9,8 +9,8 @@ import Menu from "./components/Menu";
 function App() {
   return (
     <>
-      <Menu></Menu>
       <main>
+        <Menu></Menu>
         <section className="hero-section">
           <h1>A modern publishing platform</h1>
           <p>Grow your audience and build your online brand</p>
@@ -57,13 +57,13 @@ function App() {
             <img src={phones} alt="" className="img-phones" />
           </div>
         </section>
-        <section>
+        <section className="laptop-section">
           <div>
             <img src={laptopMobile} alt="" className="mobile" />
             <img src={laptopDesktop} alt="" className="desktop" />
           </div>
-          <div>
-            <h2>Free, open, simple</h2>
+          <div className="design-section-text">
+            <h3>Free, open, simple</h3>
             <p>
               Blogr is a free and open source application backed by a large
               community of helpful developers. It supports features such as code
@@ -72,7 +72,7 @@ function App() {
               Analytics. The architecture is clean and is relatively easy to
               learn.
             </p>
-            <h2>Powerful tooling</h2>
+            <h3>Powerful tooling</h3>
             <p>
               Batteries included. We built a simple and straightforward CLI tool
               that makes customization and deployment a breeze, but capable of
