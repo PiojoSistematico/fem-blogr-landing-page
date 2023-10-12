@@ -62,7 +62,7 @@
   --size-1000: 7.5rem;
   --size-2000: 15rem;
   --size-2500: 20rem;
-  --size-3000: 30rem;
+  --size-3000: 25rem;
 }
 
 /* Reset */
@@ -177,6 +177,7 @@ header {
   left: 0;
   width: 100%;
   background-color: transparent;
+  gap: var(--size-600);
 }
 
 nav {
@@ -227,8 +228,6 @@ a:focus-visible {
 }
 
 .arrow {
-  /* filter: invert(68%) sepia(26%) saturate(2041%) hue-rotate(306deg)
-    brightness(98%) contrast(104%); */
   width: var(--size-200);
   height: var(--size-200);
 }
@@ -237,11 +236,6 @@ a:focus-visible {
   transform: rotate(180deg);
 }
 
-/* .menu-open .arrow {
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(190deg)
-    brightness(104%) contrast(101%);
-}
- */
 .dropdown {
   display: flex;
   justify-content: center;
@@ -355,10 +349,22 @@ a:focus-visible {
   border: none;
 }
 
+.btn-filled:hover,
+.btn-filled:focus-visible {
+  background-color: var(--clr-primary-very-light-red);
+  color: var(--clr-neutral-white);
+}
+
 .btn-transparent {
   background-color: transparent;
   color: var(--clr-neutral-white);
   border: 1px solid var(--clr-neutral-white);
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus-visible {
+  background-color: var(--clr-neutral-white);
+  color: var(--clr-primary-light-red);
 }
 
 .design-section,
@@ -371,6 +377,10 @@ a:focus-visible {
   text-align: center;
 }
 
+.design-section {
+  padding: var(--size-800) var(--size-600) var(--size-3000) var(--size-600);
+}
+
 .laptop-section {
   padding: var(--size-800) var(--size-600) var(--size-800) var(--size-600);
 }
@@ -379,6 +389,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--size-400);
+  grid-area: text;
 }
 
 .design-section h2,
@@ -389,6 +400,10 @@ a:focus-visible {
   font-size: var(--font-size-secondary-heading);
   color: var(--clr-primary-very-dark-blue);
   font-weight: var(--font-weight-medium);
+}
+
+.design-section h2 {
+  grid-area: h2;
 }
 
 .art-section {
@@ -403,7 +418,7 @@ a:focus-visible {
       var(--clr-gradient-very-dark-desaturated-blue)
     );
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: 50% 100%;
 
   color: var(--clr-neutral-white);
   text-align: center;
@@ -436,6 +451,12 @@ footer {
   gap: var(--size-600);
 }
 
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-300);
+}
+
 li {
   list-style: none;
 }
@@ -443,6 +464,15 @@ li {
 footer h2 {
   font-weight: var(--font-weight-extra-bold);
   margin-bottom: var(--size-400);
+}
+
+footer a {
+  font-weight: var(--font-weight-regular);
+}
+
+footer a:hover,
+footer a:focus-visible {
+  text-decoration: underline;
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqp */
@@ -454,11 +484,161 @@ footer h2 {
 } */
 
 /* Media queries */
-@media (min-width: 50em) {
+@media (min-width: 55em) {
   .desktop {
     display: block;
   }
   .mobile {
     display: none;
+  }
+
+  header {
+    padding: var(--size-600) var(--size-1000);
+  }
+  nav {
+    width: 100%;
+  }
+
+  .nav-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-ul,
+  .btn-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--size-800);
+    border-bottom: none;
+    padding: 0;
+  }
+  .btn-section {
+    gap: var(--size-600);
+  }
+
+  .dropdown:hover,
+  .dropdown:focus-visible {
+    text-decoration: underline;
+    color: var(--clr-neutral-white);
+  }
+
+  .dropdown-li {
+    position: relative;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    bottom: -var(--size-400);
+    left: 0;
+    background-color: var(--clr-neutral-white);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: var(--size-200);
+    gap: var(--size-200);
+    border-radius: var(--size-100);
+    width: var(--size-1000);
+  }
+
+  .dropdown-content a {
+    color: var(--clr-neutral-very-dark-grayish-blue);
+    text-align: left;
+  }
+  .dropdown-content a:hover,
+  .dropdown-content a:focus-visible {
+    color: var(--clr-neutral-very-dark-black-blue);
+  }
+
+  .btn-login {
+    background-color: transparent;
+    color: var(--clr-neutral-white);
+    border: none;
+  }
+
+  .btn-register {
+    background: var(--clr-neutral-white);
+    color: var(--clr-primary-light-red);
+    border: none;
+  }
+
+  .design-section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "h2 h2"
+      "text img";
+    padding: var(--size-1000) 0 var(--size-1000) 0;
+  }
+  .design-section-text {
+    text-align: left;
+    padding-left: var(--size-1000);
+  }
+  .design-section picture {
+    grid-area: img;
+    max-width: 600px;
+    height: 600px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .art-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--size-400);
+    position: relative;
+    background: url("./assets/images/bg-pattern-circles.svg"),
+      linear-gradient(
+        135deg,
+        var(--clr-gradient-very-dark-gray-blue),
+        var(--clr-gradient-very-dark-desaturated-blue)
+      );
+    background-repeat: no-repeat;
+    background-position: -50% 100%;
+    color: var(--clr-neutral-white);
+    text-align: left;
+    padding: var(--size-1000) var(--size-600) var(--size-1000) 50%;
+    border-radius: 0 var(--size-1000) 0 var(--size-1000);
+  }
+
+  .art-section h2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-primary-heading);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .img-phones {
+    position: absolute;
+    left: 25%;
+    top: 0;
+    transform: translate(-50%, -10%);
+    max-width: 50%;
+  }
+  .laptop-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--size-600);
+    padding: var(--size-1000) var(--size-600) var(--size-1000) var(--size-600);
+    text-align: center;
+  }
+  .laptop-section .design-section-text {
+    width: 50%;
+    padding: 0;
+  }
+  .laptop-section picture {
+    width: 50%;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: start;
+    justify-items: start;
+    text-align: left;
+    padding: var(--size-800) var(--size-800);
   }
 }

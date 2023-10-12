@@ -21,10 +21,10 @@ function App() {
         </section>
         <section className="design-section">
           <h2>Designed for the future</h2>
-          <div>
+          <picture>
             <img src={editorMobile} alt="" className="mobile" />
             <img src={editorDesktop} alt="" className="desktop" />
-          </div>
+          </picture>
 
           <div className="design-section-text">
             <h3>Introducing an extensible editor</h3>
@@ -58,10 +58,10 @@ function App() {
           </div>
         </section>
         <section className="laptop-section">
-          <div>
+          <picture>
             <img src={laptopMobile} alt="" className="mobile" />
             <img src={laptopDesktop} alt="" className="desktop" />
-          </div>
+          </picture>
           <div className="design-section-text">
             <h3>Free, open, simple</h3>
             <p>
